@@ -158,8 +158,8 @@ const Hero = () => {
               <span className="block">De Aplicador</span>
               <span className="text-brand-green italic block">a Formulador.</span>
             </h1>
-            <p className="text-base md:text-xl text-brand-dark/80 max-w-lg leading-relaxed">
-              Descubra o Método Cabeleireiro Científico Formulador e torne-se referência em cosmetologia capilar, criando fórmulas personalizadas que elevam o seu trabalho e a sua liberdade profissional.
+            <p className="text-base md:text-lg text-brand-dark/70 max-w-md leading-relaxed">
+              Domine a cosmetologia capilar, crie fórmulas personalizadas e eleve sua carreira com o Método CCF.
             </p>
             <div className="pt-4 w-full sm:w-auto">
               <a
