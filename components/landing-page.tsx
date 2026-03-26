@@ -27,17 +27,18 @@ const Navbar = () => {
   const menuItems = ['Início', 'O Método', 'Quem Somos', 'Calendário', 'Dúvidas'];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[60] bg-brand-bg/95 backdrop-blur-md border-b border-black/5">
+    <nav className="fixed top-0 left-0 right-0 z-[60] bg-white border-b border-black/5 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:h-24">
+        <div className="flex justify-between items-center py-4 md:py-6">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center pr-4">
+          <div className="flex-shrink-0 flex items-center pr-2">
             <Image
               src="/images/logo_ccf.svg"
               alt="CCF Logo"
-              width={140}
+              width={160}
               height={50}
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-10 md:h-14 w-auto object-contain shrink-0"
+              style={{ minWidth: '140px' }}
               priority
             />
           </div>
@@ -68,9 +69,15 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-brand-dark">
-              {isOpen ? <X /> : <Menu />}
+          <div className="md:hidden flex-shrink-0 pl-2">
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-brand-dark p-2 -mr-2 bg-brand-green/5 rounded-xl hover:bg-brand-green/10 active:scale-95 transition-all"
+              aria-label="Toggle Menu"
+            >
+              <div className="shrink-0 scale-125">
+                {isOpen ? <X /> : <Menu />}
+              </div>
             </button>
           </div>
         </div>
