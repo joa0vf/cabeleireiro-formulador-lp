@@ -239,7 +239,7 @@ const About = () => {
 
           <div className="flex flex-col gap-12">
             <div className="flex items-end gap-4">
-              <span className="text-7xl font-serif font-semibold text-brand-green leading-none">+100</span>
+              <span className="text-7xl font-serif font-semibold text-brand-green leading-none">+2.000</span>
               <span className="text-2xl font-serif font-semibold text-brand-dark uppercase tracking-widest pb-1">Alunos</span>
             </div>
 
@@ -601,8 +601,8 @@ const Agenda = () => {
     { date: '26 e 27', month: 'JANEIRO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg', isPast: true },
     { date: '09 e 10', month: 'FEVEREIRO', city: 'Goiânia, Goiás', img: '/images/goiania.jpg', isPast: true },
     { date: '16 e 17', month: 'MARÇO', city: 'Vitória, ES', img: '/images/vitoria.jpg', isPast: true },
-    { date: '14 e 15', month: 'ABRIL', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
-    { date: '20 e 21', month: 'JULHO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
+    { date: '14 e 15', month: 'SETEMBRO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
+    { date: '20 e 21', month: 'OUTUBRO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
   ];
 
   return (
@@ -624,7 +624,11 @@ const Agenda = () => {
                 : 'bg-white border-black/5 hover:border-brand-green/30 hover:shadow-xl hover:shadow-brand-green/5'
                 }`}
             >
-              {event.isPast && (
+              {!event.isPast ? (
+                <div className="absolute top-4 right-6 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase z-10 animate-pulse shadow-lg shadow-brand-green/20">
+                  Vagas Abertas
+                </div>
+              ) : (
                 <div className="absolute top-4 right-6 bg-brand-dark/10 text-brand-dark/60 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase z-10">
                   Realizado
                 </div>
