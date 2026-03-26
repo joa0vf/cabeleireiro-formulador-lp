@@ -27,17 +27,17 @@ const Navbar = () => {
   const menuItems = ['Início', 'O Método', 'Quem Somos', 'Calendário', 'Dúvidas'];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-black/5">
+    <nav className="fixed top-0 left-0 right-0 z-[60] bg-brand-bg/95 backdrop-blur-md border-b border-black/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center py-4 md:h-24">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center pr-4">
             <Image
               src="/images/logo_ccf.svg"
               alt="CCF Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
+              width={140}
+              height={50}
+              className="h-10 md:h-12 w-auto object-contain"
               priority
             />
           </div>
