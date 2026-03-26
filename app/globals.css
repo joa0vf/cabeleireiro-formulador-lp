@@ -3,18 +3,26 @@
 @theme {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
-  
+
   --color-brand-green: #008C45;
   --color-brand-dark: #004D26;
   --color-brand-bg: #fdfaf6;
 }
 
 @layer base {
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
     max-width: 100%;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif font-semibold;
   }
 }
