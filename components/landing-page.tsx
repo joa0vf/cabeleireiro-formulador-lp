@@ -3,12 +3,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'motion/react';
-import { 
-  FlaskConical, 
-  Lightbulb, 
-  CheckCircle2, 
-  Star, 
-  Menu, 
+import {
+  FlaskConical,
+  Lightbulb,
+  CheckCircle2,
+  Star,
+  Menu,
   X,
   Play,
   Calendar,
@@ -32,21 +32,21 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Image 
-              src="/images/logo_ccf.svg" 
-              alt="CCF Logo" 
-              width={120} 
-              height={40} 
-              className="h-10 w-auto" 
-              priority 
+            <Image
+              src="/images/logo_ccf.svg"
+              alt="CCF Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              priority
             />
           </div>
-          
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10">
             {menuItems.map((item) => (
-              <a 
-                key={item} 
+              <a
+                key={item}
                 href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
                 className="text-sm font-serif font-semibold text-brand-dark hover:text-brand-green transition-colors"
               >
@@ -57,7 +57,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a 
+            <a
               href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
@@ -78,14 +78,14 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-brand-bg border-b border-black/5 px-4 pt-2 pb-6 flex flex-col gap-4"
         >
           {menuItems.map((item) => (
-            <a 
-              key={item} 
+            <a
+              key={item}
               href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
               className="text-lg font-serif font-semibold text-brand-dark"
               onClick={() => setIsOpen(false)}
@@ -93,7 +93,7 @@ const Navbar = () => {
               {item}
             </a>
           ))}
-          <a 
+          <a
             href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
@@ -112,15 +112,15 @@ const Hero = () => {
     <section id="inicio" className="pt-32 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-32 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
             <div className="relative z-10 w-full flex justify-center lg:justify-center mt-8 lg:mt-0">
-              <Image 
-                src="/images/neide_dolia.png" 
+              <Image
+                src="/images/neide_dolia.png"
                 alt="Profª Neide Dólia - Cabeleireiro Científico Formulador"
                 width={800}
                 height={1000}
@@ -134,7 +134,7 @@ const Hero = () => {
             <div className="absolute -top-6 -right-6 w-48 h-48 bg-brand-green/5 rounded-full blur-3xl -z-10" />
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -148,7 +148,7 @@ const Hero = () => {
               Descubra o Método Cabeleireiro Científico Formulador e torne-se referência em cosmetologia capilar, criando fórmulas personalizadas que elevam o seu trabalho e a sua liberdade profissional.
             </p>
             <div className="pt-4 w-full sm:w-auto">
-              <a 
+              <a
                 href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -168,16 +168,16 @@ const PresentationVideo = () => {
   return (
     <section className="py-12 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-brand-bg group cursor-pointer"
         >
-          <Image 
-            src="https://picsum.photos/seed/presentation-thumb/1280/720" 
-            alt="Vídeo de Apresentação" 
-            fill 
+          <Image
+            src="https://picsum.photos/seed/presentation-thumb/1280/720"
+            alt="Vídeo de Apresentação"
+            fill
             className="object-cover group-hover:scale-105 transition-transform duration-700"
             referrerPolicy="no-referrer"
           />
@@ -205,7 +205,7 @@ const About = () => {
     <section id="quem-somos" className="py-24 bg-white/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -214,21 +214,18 @@ const About = () => {
               Quem Somos?
             </h2>
             <div className="space-y-6 text-brand-dark/80 leading-relaxed">
-              <p className="font-bold text-brand-green">
-                CEO da In&apos;Nova Educação Profissional | Química Industrial | Especialista em Formulação de Cosméticos Capilares.
+              <p>
+                <strong>Profª Neide Dólia</strong> | Especialista em Saúde do Couro Cabeludo e Fios | Docente da Metodologia Cabeleireiro Científico Formulador RJ
               </p>
               <p>
-              <strong>Profª Neide Dólia</strong> | Especialista em Saúde do Couro Cabeludo e Fios | Docente da Metodologia Cabeleireiro Científico Formulador RJ
-              </p>
-              <p>
-                Referência no ensino da Terapia Capilar, a Profª Neide Dólia dedica sua trajetória a formar profissionais que desejam ir além do básico. Como professora da metodologia [NOME DO MÉTODO], ela une ciência e prática para capacitar alunos em todo o Brasil.
+                Referência no ensino da Terapia Capilar, a Profª Neide Dólia dedica sua trajetória a formar profissionais que desejam ir além do básico. Como professora da metodologia Cabeleireiro Científico Formulador, ela une ciência e prática para capacitar alunos em todo o Brasil.
 
                 Sua atuação é focada em transformar cabeleireiros e terapeutas em especialistas seguros de seus diagnósticos. Através de uma didática única, Neide ajuda seus alunos a conquistarem autoridade e entregarem saúde capilar de verdade, consolidando-se como uma mentora essencial para quem busca crescer através do conhecimento técnico e científico.              </p>
               <p className="italic border-l-4 border-brand-green pl-6 py-2 bg-brand-green/5 rounded-r-xl">
                 <strong>Sua missão é clara:</strong> Levar conhecimento científico acessível e transformar carreiras, garantindo liberdade técnica, criativa e financeira para os cabeleireiros de todo o país.
               </p>
               <div className="pt-6">
-                <a 
+                <a
                   href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -245,22 +242,22 @@ const About = () => {
               <span className="text-7xl font-serif font-semibold text-brand-green leading-none">+100</span>
               <span className="text-2xl font-serif font-semibold text-brand-dark uppercase tracking-widest pb-1">Alunos</span>
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden aspect-square relative shadow-lg">
-                  <Image src="https://picsum.photos/seed/students1/400/400" alt="Alunos" fill className="object-cover" referrerPolicy="no-referrer" />
+                  <Image src="/images/turma1.jpg" alt="Equipe CCF" fill className="object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-[3/4] relative shadow-lg">
-                  <Image src="https://picsum.photos/seed/students2/400/533" alt="Alunos" fill className="object-cover" referrerPolicy="no-referrer" />
+                  <Image src="/images/turma2.jpg" alt="Alunos CCF" fill className="object-cover" referrerPolicy="no-referrer" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="rounded-2xl overflow-hidden aspect-[3/4] relative shadow-lg">
-                  <Image src="https://picsum.photos/seed/students3/400/533" alt="Alunos" fill className="object-cover" referrerPolicy="no-referrer" />
+                  <Image src="/images/turma3.jpg" alt="Alunos CCF" fill className="object-cover" referrerPolicy="no-referrer" />
                 </div>
                 <div className="rounded-2xl overflow-hidden aspect-square relative shadow-lg">
-                  <Image src="https://picsum.photos/seed/students4/400/400" alt="Alunos" fill className="object-cover" referrerPolicy="no-referrer" />
+                  <Image src="/images/turma4.jpg" alt="Alunos em Aula" fill className="object-cover" referrerPolicy="no-referrer" />
                 </div>
               </div>
             </div>
@@ -275,7 +272,7 @@ const About = () => {
             { icon: CheckCircle2, title: 'Resultados Comprovados' },
             { icon: Star, title: 'Método Acessível' },
           ].map((feature, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -304,7 +301,7 @@ const Method = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -317,16 +314,16 @@ const Method = () => {
           </p>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="rounded-3xl overflow-hidden aspect-video relative shadow-2xl mb-20 border border-white/20"
         >
-          <Image 
-            src="/images/foto-metodo-neide.jpg" 
-            alt="O Método em Prática - Profª Neide Dólia" 
-            fill 
+          <Image
+            src="/images/foto-metodo-neide.jpg"
+            alt="O Método em Prática - Profª Neide Dólia"
+            fill
             className="object-cover"
             referrerPolicy="no-referrer"
           />
@@ -339,7 +336,7 @@ const Method = () => {
             { num: '3', title: 'Acesso Ao Portal CCF', desc: 'Uma plataforma exclusiva com materiais de apoio, vídeos, artigos e comunidade profissional para continuar aprendendo mesmo após o curso.' },
             { num: '4', title: 'Certificado Reconhecido', desc: 'Certificação com credibilidade nacional, valorizando sua carreira e destacando seu nome entre os melhores profissionais da área.' },
           ].map((item, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -374,7 +371,7 @@ const Testimonials = () => {
     { id: 4, name: 'Cenyra Aluna Rio de Janeiro', img: '/capa_videos/1177311005.jpg', vimeoId: '1177311005' },
     { id: 5, name: 'Pink Aluna Rio de Janeiro', img: '/capa_videos/1177310928.jpg', vimeoId: '1177310928' },
   ];
-  
+
   React.useEffect(() => {
     const handleResize = () => {
       setItemsToShow(window.innerWidth < 768 ? 1 : 3);
@@ -398,18 +395,18 @@ const Testimonials = () => {
         <h2 className="text-4xl md:text-5xl font-serif font-semibold text-brand-dark text-center mb-16 uppercase tracking-tight">
           O que os nossos alunos acham
         </h2>
-        
+
         <div className="relative group">
           {/* Navigation Arrows */}
-          <button 
+          <button
             onClick={prev}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 flex items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
-          
-          <button 
+
+          <button
             onClick={next}
             className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 flex items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
             aria-label="Próximo"
@@ -418,25 +415,25 @@ const Testimonials = () => {
           </button>
 
           <div className="overflow-hidden">
-            <motion.div 
+            <motion.div
               animate={{ x: `-${currentIndex * (100 / itemsToShow)}%` }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               className="flex"
             >
               {testimonials.map((item) => (
-                <div 
+                <div
                   key={item.id}
                   className="min-w-full md:min-w-[33.333%] shrink-0 px-3"
                 >
-                  <motion.div 
+                  <motion.div
                     whileHover={{ y: -10 }}
                     onClick={() => setSelectedVimeoId(item.vimeoId)}
                     className="aspect-[9/16] bg-brand-dark/5 rounded-3xl relative overflow-hidden group/item cursor-pointer border border-black/5 shadow-lg"
                   >
-                    <Image 
-                      src={item.img} 
-                      alt={item.name} 
-                      fill 
+                    <Image
+                      src={item.img}
+                      alt={item.name}
+                      fill
                       className="object-cover opacity-80 group-hover/item:opacity-100 transition-opacity"
                       referrerPolicy="no-referrer"
                     />
@@ -460,7 +457,7 @@ const Testimonials = () => {
         {/* Dots Indicator */}
         <div className="flex justify-center gap-3 mt-12">
           {testimonials.map((_, idx) => (
-            <button 
+            <button
               key={idx}
               onClick={() => setCurrentIndex(idx)}
               className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? 'w-10 bg-brand-green' : 'w-2 bg-brand-dark/20'}`}
@@ -473,19 +470,19 @@ const Testimonials = () => {
       {/* Video Modal Overlay */}
       <AnimatePresence>
         {selectedVimeoId && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               className="relative w-full max-w-lg aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl"
             >
-              <button 
+              <button
                 onClick={() => setSelectedVimeoId(null)}
                 className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-colors"
               >
@@ -525,16 +522,15 @@ const Agenda = () => {
 
         <div className="space-y-6">
           {events.map((event, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className={`flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl border transition-all relative group ${
-                event.isPast 
-                  ? 'bg-black/[0.02] border-black/5 opacity-60 grayscale' 
-                  : 'bg-white border-black/5 hover:border-brand-green/30 hover:shadow-xl hover:shadow-brand-green/5'
-              }`}
+              className={`flex flex-col md:flex-row items-center gap-6 p-6 rounded-3xl border transition-all relative group ${event.isPast
+                ? 'bg-black/[0.02] border-black/5 opacity-60 grayscale'
+                : 'bg-white border-black/5 hover:border-brand-green/30 hover:shadow-xl hover:shadow-brand-green/5'
+                }`}
             >
               {event.isPast && (
                 <div className="absolute top-4 right-6 bg-brand-dark/10 text-brand-dark/60 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase z-10">
@@ -546,19 +542,19 @@ const Agenda = () => {
                 <span className={`text-3xl font-serif font-semibold ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.date}</span>
                 <span className={`text-xs font-bold tracking-widest ${event.isPast ? 'text-brand-dark/30' : 'text-brand-green'}`}>{event.month}</span>
               </div>
-              
+
               <div className="flex-grow flex items-center gap-4">
                 <MapPin className={`${event.isPast ? 'text-brand-dark/20' : 'text-brand-green'} w-5 h-5 shrink-0`} />
                 <span className={`text-2xl font-serif font-semibold ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.city}</span>
               </div>
 
               <div className={`w-full md:w-48 h-24 rounded-2xl overflow-hidden relative shadow-md ${event.isPast ? 'opacity-40' : ''}`}>
-                <Image 
-                  src={event.img} 
-                  alt={event.city} 
-                  fill 
-                  className={`object-cover ${!event.isPast ? 'group-hover:scale-110' : ''} transition-transform duration-500`} 
-                  referrerPolicy="no-referrer" 
+                <Image
+                  src={event.img}
+                  alt={event.city}
+                  fill
+                  className={`object-cover ${!event.isPast ? 'group-hover:scale-110' : ''} transition-transform duration-500`}
+                  referrerPolicy="no-referrer"
                 />
               </div>
             </motion.div>
@@ -566,7 +562,7 @@ const Agenda = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <a 
+          <a
             href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
@@ -605,7 +601,7 @@ const FAQ = () => {
   return (
     <section id="duvidas" className="py-24 bg-brand-bg">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -617,7 +613,7 @@ const FAQ = () => {
 
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -625,7 +621,7 @@ const FAQ = () => {
               transition={{ delay: idx * 0.1 }}
               className="border border-black/5 rounded-2xl overflow-hidden bg-white shadow-sm"
             >
-              <button 
+              <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 className="w-full p-6 flex items-center justify-between text-left hover:bg-brand-green/5 transition-colors"
               >
@@ -634,10 +630,10 @@ const FAQ = () => {
                   {openIndex === idx ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                 </div>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === idx && (
-                  <motion.div 
+                  <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -655,7 +651,7 @@ const FAQ = () => {
 
         <div className="mt-16 text-center">
           <p className="text-brand-dark/60 mb-6">Ainda tem alguma dúvida específica?</p>
-          <a 
+          <a
             href="https://api.whatsapp.com/send/?phone=5521985756901&text=Olá, tenho uma dúvida sobre o curso CCF"
             target="_blank"
             rel="noopener noreferrer"
@@ -684,7 +680,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
-            <a 
+            <a
               href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
@@ -707,7 +703,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div className="flex flex-col gap-4">
             <h4 className="text-brand-green font-bold tracking-widest uppercase text-sm">Localização</h4>
             <p className="text-white/80">
@@ -727,39 +723,39 @@ const Footer = () => {
 
         <div className="pt-12 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center">
-            <Image 
-              src="/images/logo_ccf_branco.svg" 
-              alt="CCF Logo" 
-              width={150} 
-              height={50} 
-              className="h-12 w-auto" 
+            <Image
+              src="/images/logo_ccf_branco.svg"
+              alt="CCF Logo"
+              width={150}
+              height={50}
+              className="h-12 w-auto"
             />
           </div>
-          
+
           <div className="text-white/40 text-xs tracking-widest uppercase">
             © 2026 Todos os direitos reservados.
           </div>
 
           <div className="flex gap-6">
-            <a 
-              href="https://www.instagram.com/profneidedolia/" 
-              target="_blank" 
+            <a
+              href="https://www.instagram.com/profneidedolia/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-bold text-white/60 hover:text-brand-green transition-colors uppercase tracking-widest"
             >
               Instagram
             </a>
-            <a 
-              href="https://www.facebook.com/cformuladorj/" 
-              target="_blank" 
+            <a
+              href="https://www.facebook.com/cformuladorj/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-bold text-white/60 hover:text-brand-green transition-colors uppercase tracking-widest"
             >
               Facebook
             </a>
-            <a 
-              href="https://youtu.be/rULnlCvdvaE?si=ut4OzBkVJEM8MK9A" 
-              target="_blank" 
+            <a
+              href="https://youtu.be/rULnlCvdvaE?si=ut4OzBkVJEM8MK9A"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-bold text-white/60 hover:text-brand-green transition-colors uppercase tracking-widest"
             >
@@ -774,7 +770,7 @@ const Footer = () => {
 
 const FloatingWhatsApp = () => {
   return (
-    <motion.a 
+    <motion.a
       href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
       target="_blank"
       rel="noopener noreferrer"
@@ -785,12 +781,12 @@ const FloatingWhatsApp = () => {
       className="fixed bottom-6 right-6 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl z-50 group cursor-pointer"
       title="Fale conosco no WhatsApp"
     >
-      <svg 
-        viewBox="0 0 24 24" 
+      <svg
+        viewBox="0 0 24 24"
         className="w-8 h-8 text-white fill-current"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
       </svg>
       <div className="absolute -top-12 right-0 bg-brand-dark text-white text-xs px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
         WhatsApp
