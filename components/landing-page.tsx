@@ -496,17 +496,17 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-brand-bg relative overflow-hidden">
+    <section className="py-24 bg-brand-bg relative overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl md:text-5xl font-serif font-semibold text-brand-dark text-center mb-16 uppercase tracking-tight">
           O que os nossos alunos acham
         </h2>
 
-        <div className="relative group">
+        <div className="relative group overflow-hidden">
           {/* Navigation Arrows */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 flex items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -514,7 +514,7 @@ const Testimonials = () => {
 
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 flex items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
             aria-label="Próximo"
           >
             <ChevronRight className="w-6 h-6" />
