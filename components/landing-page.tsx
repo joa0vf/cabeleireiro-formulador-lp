@@ -27,18 +27,20 @@ const Navbar = () => {
   const menuItems = ['Início', 'O Método', 'Quem Somos', 'Calendário', 'Dúvidas'];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[60] bg-white border-b border-black/5 shadow-sm">
+    <nav
+      className="fixed top-0 left-0 right-0 z-[60] bg-white border-b border-black/5 shadow-sm"
+      style={{ transform: 'translateZ(0)', willChange: 'transform' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:py-6">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center pr-2">
+          <div className="flex-shrink-0 flex items-center">
             <Image
               src="/images/logo_ccf.svg"
               alt="CCF Logo"
               width={160}
               height={50}
-              className="h-10 md:h-14 w-auto object-contain shrink-0"
-              style={{ minWidth: '140px' }}
+              className="h-10 md:h-14 w-auto object-contain"
               priority
             />
           </div>
@@ -69,54 +71,59 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex-shrink-0 pl-2">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="text-brand-dark p-2 -mr-2 bg-brand-green/5 rounded-xl hover:bg-brand-green/10 active:scale-95 transition-all"
+          <div className="md:hidden flex-shrink-0">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-brand-dark p-2 rounded-xl"
               aria-label="Toggle Menu"
             >
-              <div className="shrink-0 scale-125">
-                {isOpen ? <X /> : <Menu />}
-              </div>
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-brand-bg border-b border-black/5 px-4 pt-2 pb-6 flex flex-col gap-4"
-        >
-          {menuItems.map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
-              className="text-lg font-serif font-semibold text-brand-dark"
-              onClick={() => setIsOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-          <a
-            href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-2 border-brand-dark text-brand-dark px-6 py-3 rounded-2xl text-sm font-serif font-semibold w-full text-center block"
+      {/* Mobile Menu — rendered inline inside nav to avoid clipping */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="md:hidden overflow-hidden bg-white border-t border-black/5"
           >
-            Fale Conosco
-          </a>
-        </motion.div>
-      )}
+            <div className="px-4 pt-4 pb-8 flex flex-col gap-5">
+              {menuItems.map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
+                  className="text-xl font-serif font-semibold text-brand-dark border-b border-black/5 pb-4"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+              <a
+                href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-brand-green text-white px-6 py-4 rounded-2xl text-base font-serif font-bold w-full text-center block mt-2"
+              >
+                Fale Conosco
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
 
 const Hero = () => {
   return (
-    <section id="inicio" className="pt-32 pb-12 overflow-hidden">
+    <section id="inicio" className="pt-32 pb-12 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-32 items-center">
           <motion.div
@@ -131,7 +138,7 @@ const Hero = () => {
                 alt="Profª Neide Dólia - Cabeleireiro Científico Formulador"
                 width={800}
                 height={1000}
-                className="w-full max-w-[500px] lg:max-w-none lg:w-[110%] h-auto object-contain drop-shadow-2xl lg:scale-105 lg:origin-bottom"
+                className="w-full max-w-[500px] lg:max-w-full h-auto object-contain drop-shadow-2xl"
                 referrerPolicy="no-referrer"
                 priority
               />
@@ -279,8 +286,8 @@ const About = () => {
 const IEPSection = () => {
   return (
     <section id="iep" className="py-24 bg-brand-bg relative overflow-hidden">
-      {/* Decorative background element */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-green/5 -skew-x-12 translate-x-1/2 -z-10" />
+      {/* Decorative background element — hidden overflow kept within section */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-green/5 -skew-x-12 -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
