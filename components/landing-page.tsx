@@ -225,14 +225,14 @@ const About = () => {
                 <strong>Sua missão é clara:</strong> Levar conhecimento científico acessível e transformar carreiras, garantindo liberdade técnica, criativa e financeira para os cabeleireiros de todo o país.
               </p>
               <div className="pt-6">
-                <a
-                  href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-brand-green text-white px-8 py-3 rounded-full text-sm font-bold hover:bg-brand-dark transition-all inline-block"
-                >
-                  Fale-conosco
-                </a>
+                  <a
+                    href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-brand-green text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all shadow-lg shadow-brand-green/30 transform hover:-translate-y-1 inline-block w-full sm:w-auto text-center"
+                  >
+                    Fale-conosco
+                  </a>
               </div>
             </div>
           </motion.div>
@@ -264,8 +264,100 @@ const About = () => {
           </div>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-32">
+      </div>
+    </section>
+  );
+};
+
+const IEPSection = () => {
+  return (
+    <section id="iep" className="py-24 bg-brand-bg relative overflow-hidden">
+      {/* Decorative background element */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-green/5 -skew-x-12 translate-x-1/2 -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/keyla_sampaio.png"
+                alt="Keyla Sampaio - CEO IEP"
+                width={800}
+                height={1000}
+                className="w-full h-auto object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-brand-green/10 mix-blend-multiply" />
+            </div>
+            {/* Badge */}
+            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl z-20 hidden md:block border border-brand-green/10">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-brand-green/10 flex items-center justify-center">
+                  <FlaskConical className="w-6 h-6 text-brand-green" />
+                </div>
+                <div>
+                  <div className="text-2xl font-serif font-bold text-brand-dark leading-none">Pioneira</div>
+                  <div className="text-xs text-brand-dark/50 uppercase tracking-widest mt-1">No Brasil</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-8"
+          >
+            <div>
+              <h2 className="text-4xl md:text-5xl font-serif text-brand-dark mb-2 uppercase tracking-tight">
+                Conheça a IEP:
+              </h2>
+              <p className="text-brand-green font-serif text-2xl italic font-semibold">
+                In&apos;Nova Educação Profissional
+              </p>
+            </div>
+
+            <div className="space-y-6 text-brand-dark/80 text-lg leading-relaxed">
+              <p>
+                A <strong>IEP (In&apos;Nova Educação Profissional)</strong> é uma instituição de ensino pioneira, fundada e liderada pela CEO Keyla Sampaio — Química Industrial e Especialista em Formulação de Cosméticos Capilares. A instituição nasceu com a missão de elevar o padrão técnico do mercado da beleza no Brasil, unindo ciência, prática e inovação.
+              </p>
+              <p>
+                Sob a visão estratégica de Keyla Sampaio, que em 2018 desenvolveu e lançou o aclamado Método Cabeleireiro Científico Formulador, a IEP tornou-se o epicentro dessa transformação. Através de uma metodologia exclusiva, a instituição capacita seus alunos a irem além da simples aplicação de produtos, ensinando a engenharia por trás da cosmética capilar.
+              </p>
+              <p>
+                Com milhares de profissionais formados em cursos presenciais e online por todo o país, a IEP é hoje a principal referência nacional para quem busca domínio técnico total, segurança nos diagnósticos e a liberdade de criar fórmulas personalizadas para resultados de alto impacto, sempre com o selo de autoridade e inovação de sua fundadora.
+              </p>
+            </div>
+
+            <div className="pt-4">
+              <a
+                href="https://api.whatsapp.com/send/?phone=5521985756901&text=Quero saber mais sobre a IEP"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-brand-dark text-white px-10 py-4 rounded-full font-bold hover:bg-brand-green transition-all shadow-lg shadow-brand-dark/20 transform hover:-translate-y-1"
+              >
+                Saiba Mais Sobre a IEP
+                <ChevronRight className="w-5 h-5" />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Features = () => {
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { icon: FlaskConical, title: 'Ciência Capilar' },
             { icon: Lightbulb, title: 'Formulações Inteligentes' },
@@ -803,6 +895,8 @@ export default function LandingPage() {
       <Hero />
       {/* <PresentationVideo /> */}
       <About />
+      <IEPSection />
+      <Features />
       <Method />
       <Testimonials />
       <Agenda />
