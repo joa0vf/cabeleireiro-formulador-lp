@@ -147,9 +147,9 @@ const Hero = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-6 order-1 lg:order-2 text-center lg:text-left items-center lg:items-start"
           >
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] text-brand-dark uppercase">
-              <span className="block whitespace-nowrap">De Aplicador</span>
-              <span className="text-brand-green italic block whitespace-nowrap">a Formulador.</span>
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] text-brand-dark uppercase break-words">
+              <span className="block">De Aplicador</span>
+              <span className="text-brand-green italic block">a Formulador.</span>
             </h1>
             <p className="text-base md:text-xl text-brand-dark/80 max-w-lg leading-relaxed">
               Descubra o Método Cabeleireiro Científico Formulador e torne-se referência em cosmetologia capilar, criando fórmulas personalizadas que elevam o seu trabalho e a sua liberdade profissional.
@@ -404,7 +404,7 @@ const Method = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-7xl md:text-9xl font-serif uppercase tracking-tighter mb-6"
+            className="text-6xl md:text-9xl font-serif uppercase tracking-tighter mb-6"
           >
             O Método
           </motion.h2>
@@ -632,23 +632,23 @@ const Agenda = () => {
                 }`}
             >
               {!event.isPast ? (
-                <div className="absolute top-4 right-6 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase z-10 animate-pulse shadow-lg shadow-brand-green/20">
+                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:top-4 md:right-6 bg-brand-green text-white px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase z-10 animate-pulse shadow-lg shadow-brand-green/20">
                   Vagas Abertas
                 </div>
               ) : (
-                <div className="absolute top-4 right-6 bg-brand-dark/10 text-brand-dark/60 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase z-10">
+                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:top-4 md:right-6 bg-brand-dark/10 text-brand-dark/60 px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase z-10">
                   Realizado
                 </div>
               )}
 
-              <div className={`flex flex-col items-center justify-center min-w-[120px] text-center border-r border-black/5 pr-6 ${event.isPast ? 'opacity-50' : ''}`}>
-                <span className={`text-3xl font-serif font-semibold ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.date}</span>
+              <div className={`flex flex-col items-center justify-center min-w-[120px] text-center md:border-r border-black/5 md:pr-6 ${event.isPast ? 'opacity-50' : ''}`}>
+                <span className={`text-4xl font-serif font-semibold ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.date}</span>
                 <span className={`text-xs font-bold tracking-widest ${event.isPast ? 'text-brand-dark/30' : 'text-brand-green'}`}>{event.month}</span>
               </div>
 
-              <div className="flex-grow flex items-center gap-4">
+              <div className="flex-grow flex items-center justify-center md:justify-start gap-4">
                 <MapPin className={`${event.isPast ? 'text-brand-dark/20' : 'text-brand-green'} w-5 h-5 shrink-0`} />
-                <span className={`text-2xl font-serif font-semibold ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.city}</span>
+                <span className={`text-2xl font-serif font-semibold text-center md:text-left ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.city}</span>
               </div>
 
               <div className={`w-full md:w-48 h-24 rounded-2xl overflow-hidden relative shadow-md ${event.isPast ? 'opacity-40' : ''}`}>
@@ -774,7 +774,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-b border-white/10 pb-20">
           <div>
-            <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif mb-6 leading-tight">
               Torne-Se Um Cabeleireiro <br />
               <span className="text-brand-green italic">Científico Formulador</span>
             </h2>
