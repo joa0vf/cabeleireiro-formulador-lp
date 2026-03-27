@@ -19,17 +19,16 @@ export const metadata: Metadata = {
     icons: {
       icon: [
         {
-          url: '/images/ccficone_preto.png',
-          type: 'image/png',
-          media: '(prefers-color-scheme: light)',
-        },
-        {
           url: '/images/ccficone_branco.png',
           type: 'image/png',
           media: '(prefers-color-scheme: dark)',
         },
+        {
+          url: '/images/ccficone_preto.png',
+          type: 'image/png',
+          media: '(prefers-color-scheme: light)',
+        },
       ],
-      shortcut: '/images/ccficone_preto.png',
       apple: '/images/ccficone_preto.png',
     },
 };
