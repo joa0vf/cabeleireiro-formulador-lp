@@ -20,7 +20,12 @@ import {
 } from 'lucide-react';
 import { AnimatePresence } from 'motion/react';
 
-// --- Components ---
+// --- Helpers ---
+const handleContactClick = () => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Contact');
+    }
+};
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -64,6 +69,7 @@ const Navbar = () => {
               href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleContactClick}
               className="border-2 border-brand-dark text-brand-dark px-8 py-2.5 rounded-2xl text-sm font-serif font-semibold hover:bg-brand-dark hover:text-white transition-all inline-block"
             >
               Fale Conosco
@@ -109,6 +115,7 @@ const Navbar = () => {
                 href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleContactClick}
                 className="bg-brand-green text-white px-6 py-4 rounded-2xl text-base font-serif font-bold w-full text-center block mt-2"
               >
                 Fale Conosco
@@ -166,6 +173,7 @@ const Hero = () => {
                 href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleContactClick}
                 className="bg-brand-green text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all shadow-lg shadow-brand-green/30 transform hover:-translate-y-1 inline-block w-full sm:w-auto"
               >
                 Fale-conosco
@@ -243,6 +251,7 @@ const About = () => {
                   href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleContactClick}
                   className="bg-brand-green text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all shadow-lg shadow-brand-green/30 transform hover:-translate-y-1 inline-block w-full sm:w-auto text-center"
                 >
                   Fale-conosco
@@ -354,6 +363,7 @@ const IEPSection = () => {
                 href="https://api.whatsapp.com/send/?phone=5521985756901&text=Quero saber mais sobre a IEP"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleContactClick}
                 className="inline-flex items-center gap-3 bg-brand-dark text-white px-10 py-4 rounded-full font-bold hover:bg-brand-green transition-all shadow-lg shadow-brand-dark/20 transform hover:-translate-y-1"
               >
                 Saiba Mais Sobre a IEP
@@ -676,6 +686,7 @@ const Agenda = () => {
             href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleContactClick}
             className="bg-brand-green text-white px-12 py-5 rounded-full text-lg font-bold hover:bg-brand-dark transition-all shadow-xl shadow-brand-green/20 uppercase tracking-widest inline-block"
           >
             Reserve sua vaga agora
@@ -765,6 +776,7 @@ const FAQ = () => {
             href="https://api.whatsapp.com/send/?phone=5521985756901&text=Olá, tenho uma dúvida sobre o curso CCF"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleContactClick}
             className="inline-flex items-center gap-2 text-brand-green font-bold hover:text-brand-dark transition-colors border-b-2 border-brand-green pb-1"
           >
             Fale diretamente conosco no WhatsApp
@@ -794,6 +806,7 @@ const Footer = () => {
               href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleContactClick}
               className="bg-brand-green text-white px-10 py-4 rounded-full font-bold hover:bg-white hover:text-brand-dark transition-all text-center"
             >
               Fale Conosco no WhatsApp
@@ -884,6 +897,7 @@ const FloatingWhatsApp = () => {
       href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleContactClick}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}
