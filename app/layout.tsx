@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${arima.variable}`}>
-      <head>
+      <body suppressHydrationWarning className="font-sans antialiased bg-[#FDFBF7] text-[#1A1A1A] overflow-x-hidden">
         <Script
           id="fb-pixel"
           strategy="afterInteractive"
@@ -56,14 +56,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
-      </head>
-      <body suppressHydrationWarning className="font-sans antialiased bg-[#FDFBF7] text-[#1A1A1A] overflow-x-hidden">
         <noscript>
           <img
             height="1"
             width="1"
             style={{ display: 'none' }}
-            src="https://www.facebook.com/tr?id=1946553129283243\u0026ev=PageView\u0026noscript=1"
+            src="https://www.facebook.com/tr?id=1946553129283243&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
