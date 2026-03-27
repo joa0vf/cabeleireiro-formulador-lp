@@ -16,18 +16,22 @@ const arima = Arima({
 export const metadata: Metadata = {
   title: 'Cabeleireiro Científico Formulador | De Aplicador a Formulador',
   description: 'Descubra o Método Cabeleireiro Científico Formulador e torne-se referência em cosmetologia capilar.',
-  icons: {
-    icon: [
-      {
-        url: '/images/ccficone_preto.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/images/ccficone_branco.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-    ],
-  },
+    icons: {
+      icon: [
+        {
+          url: '/images/ccficone_preto.png',
+          type: 'image/png',
+          media: '(prefers-color-scheme: light)',
+        },
+        {
+          url: '/images/ccficone_branco.png',
+          type: 'image/png',
+          media: '(prefers-color-scheme: dark)',
+        },
+      ],
+      shortcut: '/images/ccficone_preto.png',
+      apple: '/images/ccficone_preto.png',
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
