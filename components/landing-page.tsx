@@ -154,9 +154,9 @@ const Hero = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-6 order-1 lg:order-2 text-center lg:text-left items-center lg:items-start"
           >
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold leading-[0.9] text-brand-dark uppercase break-words">
+            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.1] text-brand-dark uppercase">
               <span className="block">De Aplicador</span>
-              <span className="text-brand-green italic block">a Formulador.</span>
+              <span className="text-brand-green italic block md:whitespace-nowrap">a Formulador.</span>
             </h1>
             <p className="text-base md:text-lg text-brand-dark/70 max-w-md leading-relaxed">
               Domine a cosmetologia capilar, crie fórmulas personalizadas e eleve sua carreira com o Método CCF.
@@ -239,14 +239,14 @@ const About = () => {
                 <strong>Sua missão é clara:</strong> Levar conhecimento científico acessível e transformar carreiras, garantindo liberdade técnica, criativa e financeira para os cabeleireiros de todo o país.
               </p>
               <div className="pt-6">
-                  <a
-                    href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-brand-green text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all shadow-lg shadow-brand-green/30 transform hover:-translate-y-1 inline-block w-full sm:w-auto text-center"
-                  >
-                    Fale-conosco
-                  </a>
+                <a
+                  href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-brand-green text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-brand-dark transition-all shadow-lg shadow-brand-green/30 transform hover:-translate-y-1 inline-block w-full sm:w-auto text-center"
+                >
+                  Fale-conosco
+                </a>
               </div>
             </div>
           </motion.div>
@@ -615,8 +615,8 @@ const Agenda = () => {
     { date: '26 e 27', month: 'JANEIRO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg', isPast: true },
     { date: '09 e 10', month: 'FEVEREIRO', city: 'Goiânia, Goiás', img: '/images/goiania.jpg', isPast: true },
     { date: '16 e 17', month: 'MARÇO', city: 'Vitória, ES', img: '/images/vitoria.jpg', isPast: true },
-    { date: '14 e 15', month: 'SETEMBRO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
-    { date: '20 e 21', month: 'OUTUBRO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
+    { date: '13 e 14', month: 'ABRIL', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
+    { date: '20 e 21', month: 'JULHO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
   ];
 
   return (
