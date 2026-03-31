@@ -220,7 +220,7 @@ const VideosApresentacao = () => {
             Vídeos de Apresentação
           </h2>
           <p className="mt-3 text-lg md:text-xl text-brand-dark/70 font-medium">
-            Método Cabeleireiro Científico e Formulador
+            Método Cabeleireiro Científico Formulador - Profª Neide Dólia
           </p>
         </motion.div>
       </div>
