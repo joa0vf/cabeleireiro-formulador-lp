@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 import { motion } from 'motion/react';
 import {
   FlaskConical,
@@ -190,18 +191,23 @@ const Hero = () => {
 const VideosApresentacao = () => {
   return (
     <section className="py-16 bg-brand-bg">
+      <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-brand-dark/10 flex items-center justify-center"
+          className="rounded-3xl overflow-hidden shadow-2xl border-8 border-white"
         >
-          {/* Placeholder — substituir pelo iframe do vídeo quando disponível */}
-          <div className="flex flex-col items-center gap-4 text-brand-dark/40">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
+          <div style={{ padding: '69.5% 0 0 0', position: 'relative' }}>
+            <iframe
+              src="https://player.vimeo.com/video/1178840574?badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              title="Vídeos de Apresentação — Método Cabeleireiro Científico e Formulador"
+            />
           </div>
         </motion.div>
         <motion.div
