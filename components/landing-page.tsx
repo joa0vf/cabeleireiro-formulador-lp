@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 import {
@@ -187,6 +187,7 @@ const Hero = () => {
 };
 
 const PresentationVideo = () => {
+  const [playing, setPlaying] = useState(false);
   return (
     <section className="py-12 bg-white">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -194,23 +195,36 @@ const PresentationVideo = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-brand-bg group cursor-pointer"
+          className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-brand-bg"
         >
-          <Image
-            src="https://picsum.photos/seed/presentation-thumb/1280/720"
-            alt="Vídeo de Apresentação"
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-brand-dark/20 flex items-center justify-center">
-            <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-brand-green flex items-center justify-center shadow-2xl shadow-brand-green/40 group-hover:scale-110 transition-transform">
-              <Play className="text-white fill-white w-6 h-6 md:w-10 md:h-10 ml-1" />
+          {playing ? (
+            <video
+              src="/videos/apresentacao.mp4"
+              autoPlay
+              controls
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div
+              className="relative w-full h-full group cursor-pointer"
+              onClick={() => setPlaying(true)}
+            >
+              <video
+                src="/videos/apresentacao.mp4"
+                className="w-full h-full object-cover"
+                muted
+                preload="metadata"
+              />
+              <div className="absolute inset-0 bg-brand-dark/20 flex items-center justify-center">
+                <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-brand-green flex items-center justify-center shadow-2xl shadow-brand-green/40 group-hover:scale-110 transition-transform">
+                  <Play className="text-white fill-white w-6 h-6 md:w-10 md:h-10 ml-1" />
+                </div>
+              </div>
+              <div className="absolute bottom-8 left-8 right-8 hidden md:block">
+                <h3 className="text-white text-2xl font-serif font-semibold drop-shadow-lg">Assista à Apresentação do Método CCF</h3>
+              </div>
             </div>
-          </div>
-          <div className="absolute bottom-8 left-8 right-8 hidden md:block">
-            <h3 className="text-white text-2xl font-serif font-semibold drop-shadow-lg">Assista à Apresentação do Método CCF</h3>
-          </div>
+          )}
         </motion.div>
         <div className="mt-6 text-center">
           <p className="text-brand-dark/70 font-medium italic">
@@ -925,7 +939,7 @@ export default function LandingPage() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      {/* <PresentationVideo /> */}
+      <PresentationVideo />
       <About />
       <IEPSection />
       <Features />
