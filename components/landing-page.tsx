@@ -214,6 +214,41 @@ const PresentationVideo = () => {
   );
 };
 
+const VideosApresentacao = () => {
+  return (
+    <section className="py-16 bg-brand-bg">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white bg-brand-dark/10 flex items-center justify-center"
+        >
+          {/* Placeholder — substituir pelo iframe do vídeo quando disponível */}
+          <div className="flex flex-col items-center gap-4 text-brand-dark/40">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-8 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-serif text-brand-dark font-semibold uppercase tracking-tight">
+            Vídeos de Apresentação
+          </h2>
+          <p className="mt-3 text-lg md:text-xl text-brand-dark/70 font-medium">
+            Método Cabeleireiro Científico e Formulador
+          </p>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const About = () => {
   return (
     <section id="quem-somos" className="py-24 bg-white/50">
@@ -918,6 +953,7 @@ export default function LandingPage() {
       <Navbar />
       <Hero />
       <PresentationVideo />
+      <VideosApresentacao />
       <About />
       <IEPSection />
       <Features />

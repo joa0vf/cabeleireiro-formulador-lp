@@ -1,7 +1,7 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  distDir: 'public_html',
+  distDir: 'out',
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
