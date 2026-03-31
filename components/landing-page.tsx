@@ -186,33 +186,6 @@ const Hero = () => {
   );
 };
 
-const PresentationVideo = () => {
-  return (
-    <section className="py-12 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-brand-bg"
-        >
-          <iframe
-            src="https://player.vimeo.com/video/1178840574"
-            className="w-full h-full"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            title="Apresentação do Método CCF"
-          />
-        </motion.div>
-        <div className="mt-6 text-center">
-          <p className="text-brand-dark/70 font-medium italic">
-            Vídeo de apresentação do Método CCF, professora Neide Dólia
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const VideosApresentacao = () => {
   return (
@@ -952,7 +925,6 @@ export default function LandingPage() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <PresentationVideo />
       <VideosApresentacao />
       <About />
       <IEPSection />
