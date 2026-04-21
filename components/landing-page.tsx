@@ -631,7 +631,8 @@ const Agenda = () => {
     { date: '26 e 27', month: 'JANEIRO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg', isPast: true },
     { date: '09 e 10', month: 'FEVEREIRO', city: 'Goiânia, Goiás', img: '/images/goiania.jpg', isPast: true },
     { date: '16 e 17', month: 'MARÇO', city: 'Vitória, ES', img: '/images/vitoria.jpg', isPast: true },
-    { date: '13 e 14', month: 'ABRIL', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
+    { date: '13 e 14', month: 'ABRIL', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg', isPast: true },
+    { date: '13 e 14', month: 'JULHO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
     { date: '20 e 21', month: 'JULHO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
   ];
 
