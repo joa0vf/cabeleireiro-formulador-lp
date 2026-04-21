@@ -633,7 +633,7 @@ const Agenda = () => {
     { date: '16 e 17', month: 'MARÇO', city: 'Vitória, ES', img: '/images/vitoria.jpg', isPast: true },
     { date: '13 e 14', month: 'ABRIL', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg', isPast: true },
     { date: '13 e 14', month: 'JULHO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
-    { date: '20 e 21', month: 'JULHO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
+    { date: '27 e 28', month: 'JULHO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
   ];
 
   return (
