@@ -547,6 +547,23 @@ const Method = () => {
   );
 };
 
+const MethodBooksBanner = () => {
+  return (
+    <section aria-label="Livros e métodos CCF" className="bg-brand-bg">
+      <div className="mx-auto max-w-[1920px]">
+        <Image
+          src="/images/banner-metodo-livros.png"
+          alt="Conhecimento que transforma: livros Método Loiro Sustentável e Cabeleireiro Científico Formulador"
+          width={1920}
+          height={1080}
+          sizes="100vw"
+          className="h-auto w-full"
+        />
+      </div>
+    </section>
+  );
+};
+
 const Testimonials = () => {
   return (
     <section className="relative overflow-hidden bg-brand-bg py-24">
@@ -895,6 +912,7 @@ export default function LandingPage() {
       <IEPSection />
       <Features />
       <Method />
+      <MethodBooksBanner />
       <Testimonials />
       <Agenda />
       <FAQ />
