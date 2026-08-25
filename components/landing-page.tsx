@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Script from 'next/script';
 import { motion } from 'motion/react';
 import {
   FlaskConical,
@@ -11,7 +10,6 @@ import {
   Star,
   Menu,
   X,
-  Play,
   Calendar,
   MapPin,
   ChevronLeft,
@@ -38,7 +36,7 @@ const Navbar = () => {
       style={{ transform: 'translateZ(0)', willChange: 'transform' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 md:py-6">
+        <div className="flex min-h-[4.75rem] items-center justify-between gap-4 py-3 lg:min-h-[5.5rem] lg:py-4">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Image
@@ -46,18 +44,18 @@ const Navbar = () => {
               alt="CCF Logo"
               width={160}
               height={50}
-              className="h-10 md:h-14 w-auto object-contain"
+              className="h-auto w-[13.5rem] sm:w-[15rem] lg:w-[16.5rem] xl:w-[18rem] object-contain"
               priority
             />
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-9">
             {menuItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}
-                className="text-sm font-serif font-semibold text-brand-dark hover:text-brand-green transition-colors"
+                className="whitespace-nowrap text-[0.8125rem] xl:text-sm font-serif font-semibold text-brand-dark hover:text-brand-green transition-colors"
               >
                 {item}
               </a>
@@ -65,20 +63,20 @@ const Navbar = () => {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <a
               href="https://api.whatsapp.com/send/?phone=5521985756901&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleContactClick}
-              className="border-2 border-brand-dark text-brand-dark px-8 py-2.5 rounded-2xl text-sm font-serif font-semibold hover:bg-brand-dark hover:text-white transition-all inline-block"
+              className="whitespace-nowrap border-2 border-brand-dark text-brand-dark px-5 xl:px-8 py-2.5 rounded-2xl text-sm font-serif font-semibold hover:bg-brand-dark hover:text-white transition-all inline-block"
             >
               Fale Conosco
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex-shrink-0">
+          <div className="lg:hidden flex-shrink-0">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-brand-dark p-2 rounded-xl"
@@ -99,7 +97,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: 'easeInOut' }}
-            className="md:hidden overflow-hidden bg-white border-t border-black/5"
+            className="lg:hidden overflow-hidden bg-white border-t border-black/5"
           >
             <div className="px-4 pt-4 pb-8 flex flex-col gap-5">
               {menuItems.map((item) => (
@@ -131,7 +129,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section id="inicio" className="pt-32 pb-12 overflow-x-hidden">
+    <section id="inicio" className="pt-28 sm:pt-32 lg:pt-36 pb-12 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-32 items-center">
           <motion.div
@@ -140,13 +138,13 @@ const Hero = () => {
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
-            <div className="relative z-10 w-full flex justify-center lg:justify-center mt-8 lg:mt-0">
+            <div className="relative z-10 w-full flex justify-center mt-8 lg:mt-0">
               <Image
                 src="/images/neide_dolia.png"
                 alt="Profª Neide Dólia - Cabeleireiro Científico Formulador"
                 width={800}
                 height={1000}
-                className="w-full max-w-[500px] lg:max-w-full h-auto object-contain drop-shadow-2xl"
+                className="w-full max-w-[26rem] sm:max-w-[31rem] lg:max-w-full h-auto object-contain drop-shadow-2xl"
                 referrerPolicy="no-referrer"
                 priority
               />
@@ -162,11 +160,11 @@ const Hero = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-6 order-1 lg:order-2 text-center lg:text-left items-center lg:items-start"
           >
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif font-bold leading-[1.1] text-brand-dark uppercase">
+            <h1 className="max-w-full text-[2.25rem] sm:text-5xl md:text-6xl lg:text-5xl xl:text-7xl font-serif font-bold leading-[1.02] tracking-[-0.025em] text-brand-dark uppercase text-balance">
               <span className="block">De Aplicador</span>
-              <span className="text-brand-green italic block md:whitespace-nowrap">a Formulador.</span>
+              <span className="text-brand-green italic block sm:whitespace-nowrap">a Formulador.</span>
             </h1>
-            <p className="text-base md:text-lg text-brand-dark/70 max-w-md leading-relaxed">
+            <p className="text-base md:text-lg text-brand-dark/70 max-w-md leading-relaxed text-pretty">
               Domine a cosmetologia capilar, crie fórmulas personalizadas e eleve sua carreira com o Método CCF.
             </p>
             <div className="pt-4 w-full sm:w-auto">
@@ -187,46 +185,114 @@ const Hero = () => {
   );
 };
 
+const productSlides = [
+  {
+    src: '/images/dolia-hair/dolia-hair-system-01.png',
+    alt: 'Dólia Hair System para manutenção de cabelo, pele e unhas',
+  },
+  {
+    src: '/images/dolia-hair/dolia-hair-system-02.png',
+    alt: 'Professora Neide Dólia apresentando o Dólia Hair System',
+  },
+  {
+    src: '/images/dolia-hair/dolia-hair-system-03.png',
+    alt: 'Frasco de Dólia Hair System em composição botânica',
+  },
+];
 
-const VideosApresentacao = () => {
+const ProductCarousel = () => {
+  const [activeSlide, setActiveSlide] = React.useState(0);
+  const [isPaused, setIsPaused] = React.useState(false);
+
+  React.useEffect(() => {
+    if (isPaused) return;
+
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % productSlides.length);
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused]);
+
+  const showPrevious = () => {
+    setActiveSlide((current) => (current - 1 + productSlides.length) % productSlides.length);
+  };
+
+  const showNext = () => {
+    setActiveSlide((current) => (current + 1) % productSlides.length);
+  };
+
   return (
-    <section className="py-16 bg-brand-bg">
-      <Script src="https://player.vimeo.com/api/player.js" strategy="lazyOnload" />
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-3xl overflow-hidden shadow-2xl border-8 border-white"
+    <section
+      aria-label="Apresentação do Dólia Hair System"
+      className="hidden bg-brand-bg pb-14 pt-2 sm:pb-20 sm:pt-4"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className="group relative aspect-video overflow-hidden rounded-2xl bg-brand-dark shadow-[0_24px_70px_rgba(0,77,38,0.16)] sm:rounded-[2rem]"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onFocusCapture={() => setIsPaused(true)}
+          onBlurCapture={() => setIsPaused(false)}
         >
-          <div style={{ padding: '69.5% 0 0 0', position: 'relative' }}>
-            <iframe
-              src="https://player.vimeo.com/video/1178840574?badge=0&autopause=0&player_id=0&app_id=58479"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-              title="Vídeos de Apresentação — Método Cabeleireiro Científico e Formulador"
-            />
+          <AnimatePresence initial={false} mode="wait">
+            <motion.div
+              key={activeSlide}
+              initial={{ opacity: 0, scale: 1.015 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.55, ease: 'easeOut' }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={productSlides[activeSlide].src}
+                alt={productSlides[activeSlide].alt}
+                fill
+                sizes="(max-width: 1280px) 100vw, 1280px"
+                className="object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          <button
+            type="button"
+            onClick={showPrevious}
+            aria-label="Mostrar slide anterior"
+            className="absolute left-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-brand-dark/45 text-white backdrop-blur-md transition-all hover:bg-brand-dark/75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-5 sm:h-12 sm:w-12"
+          >
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+          </button>
+          <button
+            type="button"
+            onClick={showNext}
+            aria-label="Mostrar próximo slide"
+            className="absolute right-3 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-brand-dark/45 text-white backdrop-blur-md transition-all hover:bg-brand-dark/75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:right-5 sm:h-12 sm:w-12"
+          >
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+          </button>
+
+          <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-2 rounded-full bg-brand-dark/45 px-3 py-2 backdrop-blur-md sm:bottom-5">
+            {productSlides.map((slide, index) => (
+              <button
+                key={slide.src}
+                type="button"
+                onClick={() => setActiveSlide(index)}
+                aria-label={`Mostrar slide ${index + 1}`}
+                aria-current={activeSlide === index ? 'true' : undefined}
+                className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${activeSlide === index ? 'w-7 bg-white' : 'w-2 bg-white/55 hover:bg-white/80'}`}
+              />
+            ))}
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-8 text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-serif text-brand-dark font-semibold uppercase tracking-tight">
-            Vídeos de Apresentação
-          </h2>
-          <p className="mt-3 text-lg md:text-xl text-brand-dark/70 font-medium">
-            Método Cabeleireiro Científico Formulador - Profª Neide Dólia
+
+          <p className="sr-only" aria-live="polite">
+            Slide {activeSlide + 1} de {productSlides.length}: {productSlides[activeSlide].alt}
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
+
 
 const About = () => {
   return (
@@ -482,146 +548,28 @@ const Method = () => {
 };
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [itemsToShow, setItemsToShow] = React.useState(3);
-  const [selectedVimeoId, setSelectedVimeoId] = React.useState<string | null>(null);
-
-  const testimonials = [
-    { id: 1, name: 'Rose Aluna Goiânia', img: '/capa_videos/1177310799.jpg', vimeoId: '1177310799' },
-    { id: 2, name: 'Andrêdissa Aluna Goiânia', img: '/capa_videos/1177311296.jpg', vimeoId: '1177311296' },
-    { id: 3, name: 'Juliete Aluna Rio de Janeiro', img: '/capa_videos/1177311070.jpg', vimeoId: '1177311070' },
-    { id: 4, name: 'Cenyra Aluna Rio de Janeiro', img: '/capa_videos/1177311005.jpg', vimeoId: '1177311005' },
-    { id: 5, name: 'Pink Aluna Rio de Janeiro', img: '/capa_videos/1177310928.jpg', vimeoId: '1177310928' },
-  ];
-
-  React.useEffect(() => {
-    const handleResize = () => {
-      setItemsToShow(window.innerWidth < 768 ? 1 : 3);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const next = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prev = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
   return (
-    <section className="py-24 bg-brand-bg relative overflow-x-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-serif font-semibold text-brand-dark text-center mb-16 uppercase tracking-tight">
+    <section className="relative overflow-hidden bg-brand-bg py-24">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <h2 className="mb-12 text-center font-serif text-4xl font-semibold uppercase tracking-tight text-brand-dark md:text-5xl">
           O que os nossos alunos acham
         </h2>
-
-        <div className="relative group overflow-hidden">
-          {/* Navigation Arrows */}
-          <button
-            onClick={prev}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Anterior"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-
-          <button
-            onClick={next}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-20 w-12 h-12 rounded-full bg-white shadow-xl border border-black/5 items-center justify-center text-brand-dark hover:bg-brand-green hover:text-white transition-all opacity-0 group-hover:opacity-100"
-            aria-label="Próximo"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
-          <div className="overflow-hidden">
-            <motion.div
-              animate={{ x: `-${currentIndex * (100 / itemsToShow)}%` }}
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="flex"
-            >
-              {testimonials.map((item) => (
-                <div
-                  key={item.id}
-                  className="min-w-full md:min-w-[33.333%] shrink-0 px-3"
-                >
-                  <motion.div
-                    whileHover={{ y: -10 }}
-                    onClick={() => setSelectedVimeoId(item.vimeoId)}
-                    className="aspect-[9/16] bg-brand-dark/5 rounded-3xl relative overflow-hidden group/item cursor-pointer border border-black/5 shadow-lg"
-                  >
-                    <Image
-                      src={item.img}
-                      alt={item.name}
-                      fill
-                      className="object-cover opacity-80 group-hover/item:opacity-100 transition-opacity"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover/item:scale-110 transition-transform">
-                        <Play className="text-white fill-white w-6 h-6 ml-1" />
-                      </div>
-                    </div>
-                    {/* Info Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent">
-                      <p className="text-white font-serif font-semibold text-lg">{item.name}</p>
-                      <p className="text-white/60 text-xs uppercase tracking-widest">Aluno(a) CCF</p>
-                    </div>
-                  </motion.div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Dots Indicator */}
-        <div className="flex justify-center gap-3 mt-12">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentIndex(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${currentIndex === idx ? 'w-10 bg-brand-green' : 'w-2 bg-brand-dark/20'}`}
-              aria-label={`Ir para slide ${idx + 1}`}
-            />
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative aspect-video overflow-hidden rounded-2xl border border-brand-dark/10 bg-black shadow-[0_24px_70px_rgba(0,77,38,0.16)] sm:rounded-[2rem]"
+        >
+          <iframe
+            src="https://player.vimeo.com/video/1221149711?badge=0&autopause=0&player_id=0&app_id=58479"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            className="absolute inset-0 h-full w-full"
+            title="Depoimento de aluno do Cabeleireiro Científico Formulador"
+            allowFullScreen
+          />
+        </motion.div>
       </div>
-
-      {/* Video Modal Overlay */}
-      <AnimatePresence>
-        {selectedVimeoId && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-lg aspect-[9/16] bg-black rounded-3xl overflow-hidden shadow-2xl"
-            >
-              <button
-                onClick={() => setSelectedVimeoId(null)}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center backdrop-blur-md transition-colors"
-              >
-                <X />
-              </button>
-              <iframe
-                src={`https://player.vimeo.com/video/${selectedVimeoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1`}
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                className="w-full h-full"
-                title="Depoimento Aluno"
-              ></iframe>
-            </motion.div>
-            {/* Background close click */}
-            <div className="absolute inset-0 -z-10" onClick={() => setSelectedVimeoId(null)} />
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };
@@ -632,8 +580,11 @@ const Agenda = () => {
     { date: '09 e 10', month: 'FEVEREIRO', city: 'Goiânia, Goiás', img: '/images/goiania.jpg', isPast: true },
     { date: '16 e 17', month: 'MARÇO', city: 'Vitória, ES', img: '/images/vitoria.jpg', isPast: true },
     { date: '13 e 14', month: 'ABRIL', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg', isPast: true },
-    { date: '13 e 14', month: 'JULHO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
-    { date: '27 e 28', month: 'JULHO', city: 'Brasília, DF', img: '/images/brasilia.jpg' },
+    { date: '13 e 14', month: 'JULHO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg', isPast: true },
+    { date: '27 e 28', month: 'JULHO', city: 'Brasília, DF', img: '/images/brasilia.jpg', isPast: true },
+    { date: '14 e 15', month: 'SETEMBRO', city: 'Espírito Santo, ES', img: '/images/vitoria.jpg' },
+    { date: '05 e 06', month: 'OUTUBRO', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
+    { date: '19 e 20', month: 'OUTUBRO', title: 'Magistral Rio de Janeiro', city: 'Rio de Janeiro, RJ', img: '/images/rio.jpg' },
   ];
 
   return (
@@ -672,7 +623,14 @@ const Agenda = () => {
 
               <div className="flex-grow flex items-center justify-center md:justify-start gap-4">
                 <MapPin className={`${event.isPast ? 'text-brand-dark/20' : 'text-brand-green'} w-5 h-5 shrink-0`} />
-                <span className={`text-2xl font-serif font-semibold text-center md:text-left ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.city}</span>
+                <div className="text-center md:text-left">
+                  {event.title && (
+                    <span className="mb-1 block text-xs font-bold uppercase tracking-[0.16em] text-brand-green">
+                      {event.title}
+                    </span>
+                  )}
+                  <span className={`block text-2xl font-serif font-semibold ${event.isPast ? 'text-brand-dark/40' : 'text-brand-dark'}`}>{event.city}</span>
+                </div>
               </div>
 
               <div className={`w-full md:w-48 h-24 rounded-2xl overflow-hidden relative shadow-md ${event.isPast ? 'opacity-40' : ''}`}>
@@ -932,7 +890,7 @@ export default function LandingPage() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <VideosApresentacao />
+      <ProductCarousel />
       <About />
       <IEPSection />
       <Features />
