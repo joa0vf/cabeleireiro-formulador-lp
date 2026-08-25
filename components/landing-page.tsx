@@ -578,8 +578,8 @@ const Testimonials = () => {
           className="relative aspect-video overflow-hidden rounded-2xl border border-brand-dark/10 bg-black shadow-[0_24px_70px_rgba(0,77,38,0.16)] sm:rounded-[2rem]"
         >
           <iframe
-            src="https://player.vimeo.com/video/1221149711?badge=0&autopause=0&player_id=0&app_id=58479"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            src="https://www.youtube.com/embed/ZYZm5ZWoft8?rel=0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             className="absolute inset-0 h-full w-full"
             title="Depoimento de aluno do Cabeleireiro Científico Formulador"
